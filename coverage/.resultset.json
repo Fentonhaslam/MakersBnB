@@ -1,15 +1,24 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Desktop/MakersBnB/spec/features/home_spec.rb": [
+      "/Users/michaelredgrave/Projects/MakersBnB/spec/features/home_spec.rb": [
         1,
         1,
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1566904257
+    "timestamp": 1566911331
   }
 }
