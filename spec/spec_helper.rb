@@ -13,12 +13,12 @@ require "simplecov"
 require "simplecov-console"
 require "rspec"
 require_relative "./setup_test_database"
-#Capybara.app = MakersBnb
+Capybara.app = MakersBnb
 
 RSpec.configure do |config|
-  config.before(:each) do
-    setup_test_database
-  end
+ config.before(:each) do
+   setup_test_database
+ end
 end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
