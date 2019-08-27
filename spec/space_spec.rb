@@ -28,10 +28,9 @@ describe Space do
   describe ".create" do
     it "creates a new space" do
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
-      p space.price
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
-      expect(space.price).to eq("100") #changed to match sql character of zero.
+      expect(space.price).to eq "100"
       expect(space.description).to eq("2 bed flat in London")
     end
   end
