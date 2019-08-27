@@ -1,0 +1,1 @@
+CREATE TABLE spaces(id SERIAL PRIMARY KEY, title VARCHAR(60), price INTEGER(8), description VARCHAR(240));
