@@ -7,13 +7,13 @@
 
 ENV["ENVIRONMENT"] = "test"
 ENV["RACK_ENV"] = "test"
-require File.join(File.dirname(__FILE__), "..", "app.rb")
+#require File.join(File.dirname(__FILE__), "..", "app.rb")
 require "capybara/rspec"
 require "simplecov"
 require "simplecov-console"
 require "rspec"
 require_relative "./setup_test_database"
-Capybara.app = MakersBnb
+#Capybara.app = MakersBnb
 
 RSpec.configure do |config|
   config.before(:each) do
