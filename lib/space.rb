@@ -11,13 +11,14 @@ class Space
 
   def self.all
     result = DatabaseConnection.query("SELECT * FROM spaces")
-    spaces = []
-    result.each do |space|
-      spaces.push(space["title"])
-      spaces.push(space["price"])
-      spaces.push(space["description"])
+    result.map do |space|
+      Space.new(
+        id: space['id'],
+        title: space['title'],
+        price: space['price'],
+        description: space['description']
+      )
     end
-    return spaces
   end
 
   def self.create(title:, price:, description:)
