@@ -7,7 +7,11 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces' do
-    'List of spaces'
+    @spaces = [
+      "London flat",
+      "Surrey mansion",
+      "Sussex cottage"
+    ]
     erb(:'spaces/spaces')
   end
 

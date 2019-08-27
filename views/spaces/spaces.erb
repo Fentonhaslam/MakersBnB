@@ -1,4 +1,11 @@
 List of spaces
+
+<ul>
+    <% @spaces.each do |space| %>
+        <li><%= space %></li>
+    <%end%>
+</ul>
+
 <html>
     <form action='/spaces/new'>
     <input type='submit' name='Add_spaces' value='Add space'>

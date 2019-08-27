@@ -5,10 +5,12 @@ feature 'MakerBnb' do
       expect(page).to have_button('List of spaces')
     end
 
-    scenario 'Can go to the list of spaces' do
+    scenario 'A user can see a list of spaces' do
       visit('/')
       click_button('List of spaces')
-      expect(page).to have_content('List of spaces')
+      expect(page).to have_content "London flat"
+      expect(page).to have_content "Surrey mansion"
+      expect(page).to have_content "Sussex cottage"
       expect(page).to have_button('Add space')
     end
   end
