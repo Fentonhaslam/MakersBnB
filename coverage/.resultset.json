@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/database_connection_spec.rb": [
+      "/Users/student/Projects/MakersBnB/spec/database_connection_spec.rb": [
         1,
         null,
         1,
@@ -30,7 +30,7 @@
         null,
         null
       ],
-      "/Users/fentonhaslam/Projects/MakersBnB/lib/database_connection.rb": [
+      "/Users/student/Projects/MakersBnB/lib/database_connection.rb": [
         1,
         null,
         1,
@@ -47,7 +47,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/fentonhaslam/Projects/MakersBnB/spec/features/home_spec.rb": [
+=======
+      "/Users/student/Projects/MakersBnB/spec/features/home_spec.rb": [
+>>>>>>> 76bb3db23d6000b956ee7102a80b8eec92080cb4
         1,
         1,
         1,
@@ -75,7 +79,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/fentonhaslam/Projects/MakersBnB/spec/space_spec.rb": [
+=======
+      "/Users/student/Projects/MakersBnB/spec/space_spec.rb": [
+>>>>>>> 76bb3db23d6000b956ee7102a80b8eec92080cb4
         1,
         null,
         1,
@@ -113,7 +121,7 @@
         null,
         null
       ],
-      "/Users/fentonhaslam/Projects/MakersBnB/lib/space.rb": [
+      "/Users/student/Projects/MakersBnB/lib/space.rb": [
         null,
         1,
         1,
@@ -144,6 +152,10 @@
         null
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1566918342
+=======
+    "timestamp": 1566918175
+>>>>>>> 76bb3db23d6000b956ee7102a80b8eec92080cb4
   }
 }
