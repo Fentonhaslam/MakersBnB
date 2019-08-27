@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/MakersBnB/spec/database_connection_spec.rb": [
+      "/Users/fentonhaslam/Projects/MakersBnB/spec/database_connection_spec.rb": [
         1,
         null,
         1,
@@ -30,7 +30,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/lib/database_connection.rb": [
+      "/Users/fentonhaslam/Projects/MakersBnB/lib/database_connection.rb": [
         1,
         null,
         1,
@@ -47,7 +47,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/space_spec.rb": [
+      "/Users/fentonhaslam/Projects/MakersBnB/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -64,7 +64,6 @@
         1,
         null,
         1,
-        null,
         null,
         1,
         1,
@@ -87,7 +86,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/lib/space.rb": [
+      "/Users/fentonhaslam/Projects/MakersBnB/lib/space.rb": [
         null,
         1,
         1,
@@ -118,6 +117,6 @@
         null
       ]
     },
-    "timestamp": 1566916265
+    "timestamp": 1566916451
   }
 }
