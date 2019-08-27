@@ -1,10 +1,13 @@
 
 class Space
   def self.all
-    [
-      "2 bed flat in London",
-      "mansion in countryside",
-      "Chalet in alpes",
-    ]
+    result = DatabaseConnection.query('SELECT * FROM spaces')
+    spaces = []
+    result.each do |space|
+      spaces.push(space['title'])
+      spaces.push(space['price'])
+      spaces.push(space['description'])
+    end
+    return spaces
   end
 end
