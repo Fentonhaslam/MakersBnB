@@ -30,24 +30,35 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/student/Desktop/MakersBnB/lib/database_connection.rb": [
-        1,
-        null,
-        1,
-        1,
-        3,
-        null,
-        null,
+=======
+      "/Users/student/Projects/MakersBnB/spec/features/create_spaces_spec.rb": [
         1,
         1,
-        null,
-        null,
         1,
+        1,
+        1,
+        1,
+>>>>>>> 4b7e749e8f79a6d053c208277dd605ac7c17f4d2
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+<<<<<<< HEAD
         9,
         null,
         null
       ],
       "/Users/student/Desktop/MakersBnB/spec/features/home_spec.rb": [
+=======
+        null,
+        null
+      ],
+      "/Users/student/Projects/MakersBnB/spec/features/home_spec.rb": [
+>>>>>>> 4b7e749e8f79a6d053c208277dd605ac7c17f4d2
         1,
         1,
         1,
@@ -55,6 +66,11 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -75,7 +91,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/student/Desktop/MakersBnB/spec/space_spec.rb": [
+=======
+      "/Users/student/Projects/MakersBnB/spec/space_spec.rb": [
+>>>>>>> 4b7e749e8f79a6d053c208277dd605ac7c17f4d2
         1,
         null,
         1,
@@ -112,6 +132,7 @@
         null,
         null,
         null
+<<<<<<< HEAD
       ],
       "/Users/student/Desktop/MakersBnB/lib/space.rb": [
         null,
@@ -207,5 +228,10 @@
       ]
     },
     "timestamp": 1566991774
+=======
+      ]
+    },
+    "timestamp": 1566988848
+>>>>>>> 4b7e749e8f79a6d053c208277dd605ac7c17f4d2
   }
 }
