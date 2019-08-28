@@ -17,11 +17,7 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces' do
-    @spaces = [
-      "London flat",
-      "Surrey mansion",
-      "Sussex cottage"
-    ]
+    @spaces = Space.all
     erb(:'spaces/spaces')
   end
 
@@ -30,7 +26,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/spaces' do
-    
+    Space.create(title: params[:title], price: params[:price], description: [:description])
     redirect '/spaces'
   end
 
