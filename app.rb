@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require_relative './lib/space'
+require_relative './database_connection_setup'
 
 class MakersBnb < Sinatra::Base
+  database_connection_setup
 
   get '/' do
     erb(:home)
@@ -17,16 +20,18 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces' do
-    @spaces = [
-      "London flat",
-      "Surrey mansion",
-      "Sussex cottage"
-    ]
+    @spaces = Space.all
     erb(:'spaces/spaces')
   end
 
   get '/spaces/new' do
     erb(:'spaces/new_spaces')
+  end
+
+  post '/spaces' do
+    p params
+    Space.create(title: params[:title], price: params[:price], description: params[:description])
+    redirect '/spaces'
   end
 
 run! if app_file == $0

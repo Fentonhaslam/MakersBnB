@@ -2,7 +2,13 @@ List of spaces
 
 <ul>
     <% @spaces.each do |space| %>
-        <li><%= space %></li>
+        <li>
+            <%= space.title %> 
+            <br>
+            <%= space.price %>
+            <br>
+            <%= space.description %>
+        </li>
     <%end%>
 </ul>
 

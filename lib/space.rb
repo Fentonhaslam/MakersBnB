@@ -1,4 +1,3 @@
-
 class Space
   attr_reader :id, :description, :title, :price
 

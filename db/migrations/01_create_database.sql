@@ -1,1 +1,1 @@
-CREATE DATABASE Makersbnb; 
+CREATE DATABASE makersbnb; 
