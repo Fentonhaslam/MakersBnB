@@ -8,9 +8,10 @@ feature 'MakerBnb' do
     scenario 'A user can see a list of spaces' do
       visit('/')
       click_button('List of spaces')
+      add_space("London flat", 100, "2 bed flat in London")
+      add_space("Countryside mansion", 300, "Luxury mansion in the countryside")
       expect(page).to have_content "London flat"
-      expect(page).to have_content "Surrey mansion"
-      expect(page).to have_content "Sussex cottage"
+      expect(page).to have_content "Countryside mansion"
       expect(page).to have_button('Add space')
     end
   end

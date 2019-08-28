@@ -1,6 +1,9 @@
 require 'sinatra/base'
+require_relative './lib/space'
+require_relative './database_connection_setup'
 
 class MakersBnb < Sinatra::Base
+  database_connection_setup
 
   get '/' do
     erb(:home)
