@@ -6,6 +6,16 @@ class MakersBnb < Sinatra::Base
     erb(:home)
   end
 
+  # signup
+  get '/user/new' do
+
+  end
+
+  # login
+  get '/user' do
+
+  end
+
   get '/spaces' do
     @spaces = [
       "London flat",
@@ -16,7 +26,6 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/spaces/new' do
-    p 'Hello world'
     erb(:'spaces/new_spaces')
   end
 
