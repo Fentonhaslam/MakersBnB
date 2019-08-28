@@ -9,3 +9,7 @@ def database_connection_setup
     DatabaseConnection.setup('makersbnb')
   end
 end
+
+def persisted_data(table:, id:)
+  DatabaseConnection.query("SELECT * FROM #{table} WHERE id = '#{id}';")
+end

@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/MakersBnB/spec/database_connection_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/database_connection_spec.rb": [
         1,
         null,
         1,
@@ -30,7 +30,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/lib/database_connection.rb": [
+      "/Users/student/Desktop/MakersBnB/lib/database_connection.rb": [
         1,
         null,
         1,
@@ -43,15 +43,11 @@
         null,
         null,
         1,
-        5,
+        9,
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/features/home_spec.rb": [
-=======
-      "/Users/student/Projects/MakersBnB/spec/features/home_spec.rb": [
->>>>>>> 76bb3db23d6000b956ee7102a80b8eec92080cb4
+      "/Users/student/Desktop/MakersBnB/spec/features/home_spec.rb": [
         1,
         1,
         1,
@@ -79,11 +75,7 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/space_spec.rb": [
-=======
-      "/Users/student/Projects/MakersBnB/spec/space_spec.rb": [
->>>>>>> 76bb3db23d6000b956ee7102a80b8eec92080cb4
+      "/Users/student/Desktop/MakersBnB/spec/space_spec.rb": [
         1,
         null,
         1,
@@ -121,7 +113,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/lib/space.rb": [
+      "/Users/student/Desktop/MakersBnB/lib/space.rb": [
         null,
         1,
         1,
@@ -150,12 +142,70 @@
         3,
         null,
         null
+      ],
+      "/Users/student/Desktop/MakersBnB/spec/user_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Desktop/MakersBnB/database_connection_setup.rb": [
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/student/Desktop/MakersBnB/lib/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        3,
+        3,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1566918342
-=======
-    "timestamp": 1566918175
->>>>>>> 76bb3db23d6000b956ee7102a80b8eec92080cb4
+    "timestamp": 1566991774
   }
 }
