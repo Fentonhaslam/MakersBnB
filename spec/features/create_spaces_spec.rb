@@ -8,5 +8,7 @@ feature "adding a new space" do
     fill_in('description', with: 'A Brighton Flat by the seaside')
     click_button('Create space')
     expect(page).to have_content 'Brighton Flat'
+    expect(page).to have_content '123'
+    expect(page).to have_content 'A Brighton Flat by the seaside'
   end
 end

@@ -11,7 +11,11 @@ feature 'MakerBnb' do
       add_space("London flat", 100, "2 bed flat in London")
       add_space("Countryside mansion", 300, "Luxury mansion in the countryside")
       expect(page).to have_content "London flat"
+      expect(page).to have_content 100
+      expect(page).to have_content "2 bed flat in London"
       expect(page).to have_content "Countryside mansion"
+      expect(page).to have_content 300
+      expect(page).to have_content "Luxury mansion in the countryside"
       expect(page).to have_button('Add space')
     end
   end
