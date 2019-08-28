@@ -24,6 +24,11 @@ class MakersBnb < Sinatra::Base
     erb(:'spaces/spaces')
   end
 
+  get '/booking/:id/new' do
+    @id = params[:id]
+    erb(:'bookings/new')
+  end
+
   get '/spaces/new' do
     erb(:'spaces/new_spaces')
   end
