@@ -1,5 +1,8 @@
 <html>
-    <form>
-    <input type='submit' name='create_spaces' value='Create space'>
+    <form action="/spaces" method="post">
+    <input type='text' name='title' placeholder='Title'>
+    <input type='number' name='price' placeholder="Price">
+    <input type='text' name='description' placeholder='Description'>
+    <input type='submit' value='Create space'>
     </form>
 </html>
