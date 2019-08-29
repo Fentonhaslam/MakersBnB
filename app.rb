@@ -22,6 +22,15 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/user/new' do
+    if params[:repeat_password] != params[:password]
+      flash[:notice] = 'Password does not match: Please try again'
+      redirect '/user/new'
+    end
+    if User.email?(params[:email])
+      flash[:notice] = 'Email already exists: Please try again'
+      redirect '/user/new'
+    end
+    
     user = User.create(email: params[:email], password: params[:password])
     session[:id] = user.id
     redirect '/user/spaces'
