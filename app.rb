@@ -7,6 +7,7 @@ require "sinatra/flash"
 class MakersBnb < Sinatra::Base
   enable :sessions
   database_connection_setup
+  register Sinatra::Flash
 
   get "/" do
     erb(:home)
@@ -21,8 +22,7 @@ class MakersBnb < Sinatra::Base
   post "/user/new" do
     user = User.create(email: params[:email], password: params[:password])
     session[:id] = user.id
-    p user
-    redirect "/spaces"
+    redirect "/user/spaces"
   end
 
   # login
@@ -34,19 +34,22 @@ class MakersBnb < Sinatra::Base
     user = User.authenticate(email: params[:email], password: params[:password])
     if user
       session[:id] = user.id
-      redirect("/spaces")
+      redirect("/user/spaces")
     else
       flash[:notice] = "Please check your email or password."
-      redirect("/user/login")
+      redirect("/user/")
     end
-    redirect "/spaces"
   end
 
   get "/spaces" do
-    p session
-    @user = User.find(id: session[:id])
     @spaces = Space.all
     erb(:'spaces/spaces')
+  end
+
+  get "/user/spaces" do
+    @user = User.find(id: session[:id])
+    @spaces = Space.all
+    erb(:'spaces/user_spaces')
   end
 
   get "/spaces/new" do
@@ -54,7 +57,6 @@ class MakersBnb < Sinatra::Base
   end
 
   post "/spaces" do
-    p params
     Space.create(title: params[:title], price: params[:price], description: params[:description])
     redirect "/spaces"
   end
