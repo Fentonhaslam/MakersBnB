@@ -34,8 +34,8 @@ describe Space do
     end
   end
 
-  describe "Space is availible" do
-    it "space is availible by default" do
+  describe "availability" do
+    it "is true by default" do
         space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
         expect(space).to be_a Space
         expect(space.title).to eq("London Flat")
@@ -44,14 +44,20 @@ describe Space do
         expect(space.available?).to eq true
     end
 
-    it "updates space to be unavailible" do
+    it "booking updates to false" do
         space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
         expect(space).to be_a Space
         expect(space.title).to eq("London Flat")
         expect(space.price).to eq "100"
         expect(space.description).to eq("2 bed flat in London")
-        space.book
-        expect(space.available?).to eq false
+        expect(space.available?).to eq true
+
+        updated_space = Space.book(id: space.id)
+        expect(updated_space).to be_a Space
+        expect(updated_space.title).to eq("London Flat")
+        expect(updated_space.price).to eq "100"
+        expect(updated_space.description).to eq("2 bed flat in London")
+        expect(updated_space.available?).to eq false
     end
   end
 end

@@ -9,9 +9,13 @@ List of spaces
     <br>
     <%= space.description %>
     <br>
-      <form action='booking/<%= space.id %>/new'>
-        <input type='submit' value='Request Booking'>
-      </form>
+      <% if space.available? %>
+        <form action='booking/<%= space.id %>/new'>
+          <input type='submit' value='Available'>
+        </form>
+      <% else %>
+        Booked
+      <% end %>
   </li>
   <%end%>
 </ul>
