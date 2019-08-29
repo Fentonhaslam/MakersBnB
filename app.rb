@@ -7,7 +7,11 @@ require "sinatra/flash"
 class MakersBnb < Sinatra::Base
   enable :sessions
   database_connection_setup
+
   register Sinatra::Flash
+
+  enable :method_override
+
 
   get "/" do
     erb(:home)
@@ -46,10 +50,17 @@ class MakersBnb < Sinatra::Base
     erb(:'spaces/spaces')
   end
 
+
   get "/user/spaces" do
     @user = User.find(id: session[:id])
     @spaces = Space.all
     erb(:'spaces/user_spaces')
+  end
+  
+  get '/booking/:id/new' do
+    p params
+    @id = params[:id]
+    erb(:'bookings/new')
   end
 
   get "/spaces/new" do
@@ -61,5 +72,14 @@ class MakersBnb < Sinatra::Base
     redirect "/spaces"
   end
 
-  run! if app_file == $0
+
+
+  patch '/spaces/:id' do
+    p params
+    Space.book(id: params[:id])
+    redirect '/spaces'
+  end
+
+run! if app_file == $0
+
 end

@@ -1,19 +1,27 @@
 <h3> List of spaces </h3>
 
 <ul>
-    <% @spaces.each do |space| %>
-        <li>
-            <%= space.title %> 
-            <br>
-            <%= space.price %>
-            <br>
-            <%= space.description %>
-        </li>
-    <%end%>
+  <% @spaces.each do |space| %>
+  <li class="space" id="space">
+    <%= space.title %>
+    <br>
+    <%= space.price %>
+    <br>
+    <%= space.description %>
+    <br>
+      <% if space.available? %>
+        <form action='booking/<%= space.id %>/new'>
+          <input type='submit' value='Available'>
+        </form>
+      <% else %>
+        Booked
+      <% end %>
+  </li>
+  <%end%>
 </ul>
 
 <html>
-    <form action='/spaces/new'>
-    <input type='submit' name='Add_spaces' value='Add space'>
-    </form>
+  <form action='/spaces/new'>
+  <input type='submit' name='Add_spaces' value='Add space'>
+  </form>
 </html>
