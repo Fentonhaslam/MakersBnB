@@ -3,15 +3,15 @@ List of spaces
 <ul>
   <% @spaces.each do |space| %>
   <li class="space" id="space">
-    <%= space.title %> 
+    <%= space.title %>
     <br>
     <%= space.price %>
     <br>
     <%= space.description %>
     <br>
-    <form action='booking/<%= space.id %>/new'>
-      <input type='submit' value='Request Booking'> 
-    </form>
+      <form action='booking/<%= space.id %>/new'>
+        <input type='submit' value='Request Booking'>
+      </form>
   </li>
   <%end%>
 </ul>

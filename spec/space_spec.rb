@@ -33,4 +33,25 @@ describe Space do
       expect(space.description).to eq("2 bed flat in London")
     end
   end
+
+  describe "Space is availible" do
+    it "space is availible by default" do
+        space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
+        expect(space).to be_a Space
+        expect(space.title).to eq("London Flat")
+        expect(space.price).to eq "100"
+        expect(space.description).to eq("2 bed flat in London")
+        expect(space.available?).to eq true
+    end
+
+    it "updates space to be unavailible" do
+        space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
+        expect(space).to be_a Space
+        expect(space.title).to eq("London Flat")
+        expect(space.price).to eq "100"
+        expect(space.description).to eq("2 bed flat in London")
+        space.book
+        expect(space.available?).to eq false
+    end
+  end
 end
