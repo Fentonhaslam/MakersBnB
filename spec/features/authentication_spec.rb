@@ -4,10 +4,10 @@ feature "authentication" do
 
     visit "/user/new"
     fill_in(:email, with: "test@example.com")
-    fill_in(:password, with: 'password123')
-    fill_in(:repeat_password, with: 'password123')
+    fill_in(:password, with: "password123")
+    fill_in(:repeat_password, with: "password123")
     click_button("Sign up")
-    expect(page).to have_content 'Welcome, test@example.com'
+    expect(page).to have_content "Welcome, test@example.com"
     expect(:password).to eq(:password)
   end
 
@@ -16,19 +16,18 @@ feature "authentication" do
 
     visit "/user/"
     fill_in(:Email, with: "test@example.com")
-    fill_in(:password, with: 'password123')
+    fill_in(:password, with: "password123")
     click_button("Log in")
-    expect(page).to have_content 'Welcome, test@example.com'
+    expect(page).to have_content "Welcome, test@example.com"
     expect(:password).to eq(:password)
   end
 
-  it 'raise an error if the email or the password are wrong' do
+  it "raise an error if the email or the password are wrong" do
     User.create(email: "test@example.com", password: "password123")
-    visit '/user/'
+    visit "/user/"
     fill_in(:Email, with: "test@example.com")
-    fill_in(:password, with: 'password123')
+    fill_in(:password, with: "password123")
     click_button("Log in")
-    expect(page).not_to have_content 'Welcome, test@example.com'
+    expect(page).not_to have_content "Welcome, test@example.com"
   end
 end
-
