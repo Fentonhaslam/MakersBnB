@@ -31,9 +31,9 @@ class MakersBnb < Sinatra::Base
   end
 
   post "/user/login" do
-    #user = User.authenticate(email: params[:email], password: params[:password])
+    user = User.authenticate(email: params[:email], password: params[:password])
     if user
-      session[:email] = params[email]
+      session[:id] = user.id
       redirect("/spaces")
     else
       flash[:notice] = "Please check your email or password."
