@@ -1,13 +1,9 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/database_connection_spec.rb": [
-=======
       "/Users/student/Projects/MakersBnB/spec/database_connection_spec.rb": [
         null,
         null,
->>>>>>> refs/remotes/origin/master
         1,
         null,
         1,
@@ -38,18 +34,10 @@
       ],
       "/Users/student/Projects/MakersBnB/spec/features/authentication_spec.rb": [
         null,
-<<<<<<< HEAD
-        null
-      ],
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/features/availability_spec.rb": [
-        1,
-        1,
-=======
         null,
         1,
         1,
         1,
-        null,
         1,
         1,
         1,
@@ -66,10 +54,21 @@
         1,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
         null,
->>>>>>> refs/remotes/origin/master
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -78,34 +77,44 @@
         1,
         1,
         null,
-        1,
-        1,
-<<<<<<< HEAD
-=======
+        null,
         1,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         null
       ],
       "/Users/student/Projects/MakersBnB/spec/features/availability_spec.rb": [
         null,
->>>>>>> refs/remotes/origin/master
         null,
         1,
         1,
         1,
         1,
-<<<<<<< HEAD
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/features/create_spaces_spec.rb": [
-=======
         1,
         1,
         1,
@@ -125,7 +134,6 @@
       "/Users/student/Projects/MakersBnB/spec/features/create_spaces_spec.rb": [
         null,
         null,
->>>>>>> refs/remotes/origin/master
         1,
         1,
         1,
@@ -141,13 +149,9 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/features/home_spec.rb": [
-=======
       "/Users/student/Projects/MakersBnB/spec/features/home_spec.rb": [
         null,
         null,
->>>>>>> refs/remotes/origin/master
         1,
         1,
         1,
@@ -178,13 +182,9 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/space_spec.rb": [
-=======
       "/Users/student/Projects/MakersBnB/spec/space_spec.rb": [
         null,
         null,
->>>>>>> refs/remotes/origin/master
         1,
         null,
         1,
@@ -249,13 +249,9 @@
         null,
         null
       ],
-<<<<<<< HEAD
-      "/Users/fentonhaslam/Projects/MakersBnB/spec/user_spec.rb": [
-=======
       "/Users/student/Projects/MakersBnB/spec/user_spec.rb": [
         null,
         null,
->>>>>>> refs/remotes/origin/master
         1,
         1,
         null,
@@ -268,10 +264,25 @@
         1,
         1,
         null,
+        null,
         1,
         1,
         null,
         1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
         null,
         null,
         1,
@@ -296,10 +307,7 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1567084969
-=======
-    "timestamp": 1567086916
->>>>>>> refs/remotes/origin/master
+    "timestamp": 1567090978
   }
 }
+
