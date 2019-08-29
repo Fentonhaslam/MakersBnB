@@ -1,5 +1,7 @@
-feature "adding a new space" do
-  scenario "client has booked a space" do
+# frozen_string_literal: true
+
+feature 'adding a new space' do
+  scenario 'client has booked a space' do
     visit('/')
     click_button('List of spaces')
     add_space('London flat', '100', '2 bed flat in London')
@@ -16,6 +18,4 @@ feature "adding a new space" do
     expect(page).to have_content '2 bed flat in London'
     expect(page).to have_content 'Booked'
   end
-
-
 end

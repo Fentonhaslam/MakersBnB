@@ -1,5 +1,7 @@
-feature "adding a new space" do
-  scenario "user can add a new space" do
+# frozen_string_literal: true
+
+feature 'adding a new space' do
+  scenario 'user can add a new space' do
     visit('/')
     click_button('List of spaces')
     click_button('Add space')

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Space
   attr_reader :id, :description, :title, :price
 
@@ -10,7 +12,7 @@ class Space
   end
 
   def self.all
-    result = DatabaseConnection.query("SELECT * FROM spaces")
+    result = DatabaseConnection.query('SELECT * FROM spaces')
     result.map do |space|
       Space.new(
         id: space['id'],
@@ -25,23 +27,23 @@ class Space
   def self.create(title:, price:, description:)
     result = DatabaseConnection.query("INSERT INTO spaces (title, price, description, available) VALUES('#{title}', '#{price}', '#{description}', '1') RETURNING id, title, price, description, available")
     Space.new(
-      id: result[0]["id"], 
-      title: result[0]["title"], 
-      price: result[0]["price"], 
-      description: result[0]["description"],
-      available: result[0]["available"]
-      )
+      id: result[0]['id'],
+      title: result[0]['title'],
+      price: result[0]['price'],
+      description: result[0]['description'],
+      available: result[0]['available']
+    )
   end
 
   def self.book(id:)
     result = DatabaseConnection.query("UPDATE spaces SET available = '0' RETURNING id, title, price, description, available")
     Space.new(
-      id: result[0]["id"], 
-      title: result[0]["title"], 
-      price: result[0]["price"], 
-      description: result[0]["description"],
+      id: result[0]['id'],
+      title: result[0]['title'],
+      price: result[0]['price'],
+      description: result[0]['description'],
       available: result[0]['available']
-      )
+    )
   end
 
   def available?
