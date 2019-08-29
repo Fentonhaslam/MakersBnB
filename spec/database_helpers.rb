@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def add_space(title, price, description)
   click_button('Add space')
   fill_in('title', with: title)
