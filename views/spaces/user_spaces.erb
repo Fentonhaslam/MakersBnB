@@ -1,0 +1,21 @@
+<h1> Welcome, <%= @user.email%> </h1>
+
+<h3> List of spaces </h3>
+
+<ul>
+    <% @spaces.each do |space| %>
+        <li>
+            <%= space.title %> 
+            <br>
+            <%= space.price %>
+            <br>
+            <%= space.description %>
+        </li>
+    <%end%>
+</ul>
+
+<html>
+    <form action='/spaces/new'>
+    <input type='submit' name='Add_spaces' value='Add space'>
+    </form>
+</html>

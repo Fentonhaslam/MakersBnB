@@ -1,0 +1,9 @@
+<html>
+<!-- the flash tag needs a css style to it-->
+<h1><%= flash[:notice]%></h1> 
+    <form action="/user/login" method="post">
+    <input type='text' name='email' placeholder='Email'>
+    <input type='password' name='password' placeholder="Password">
+    <input type='submit' value="Log in">
+    </form>
+</html>
