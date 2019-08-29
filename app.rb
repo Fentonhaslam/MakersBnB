@@ -69,9 +69,14 @@ class MakersBnb < Sinatra::Base
   end
 
   patch '/spaces/:id' do
-    p params
     Space.book(id: params[:id])
     redirect '/spaces'
+  end
+
+  post '/user/destroy' do
+    session.clear
+    flash[:notice] = 'You have logged out.'
+    redirect '/'
   end
 
   run! if app_file == $PROGRAM_NAME
