@@ -28,6 +28,7 @@ body {
 <h3>Please enter your user details</h3>
 
 <div>
+  <%= flash[:notice] %>
   <form action="/user/new" method = "POST">
   <input type='text' name='email' placeholder='Email'>
   <br>

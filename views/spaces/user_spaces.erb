@@ -4,18 +4,36 @@
 
 <ul>
     <% @spaces.each do |space| %>
-        <li>
-            <%= space.title %>
+        <li class="space" id="space">
+            <%= space.title %> 
             <br>
             <%= space.price %>
             <br>
             <%= space.description %>
+            <form action='/spaces/delete/<%= space.id %>' method="post">
+                <input type='hidden' name='_method' value="DELETE" />
+                <input type='submit' value='Delete space'>
+            </form>
+
+            <% if space.available? %>
+                <form action='/booking/<%= space.id %>/new'>
+                <input type='submit' value='Available'>
+                </form>
+            <% else %>
+                Booked
+            <% end %>
+            <br>
+            <%= space.user.email %>
         </li>
     <%end%>
 </ul>
 
 <html>
     <form action='/spaces/new'>
-    <input type='submit' name='Add_spaces' value='Add space'>
+        <input type='submit' value='Add space'>
+    </form>
+
+    <form action='/user/destroy' method='post'>
+        <input type='submit' value='Log out'>
     </form>
 </html>
