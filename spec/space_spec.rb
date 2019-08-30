@@ -13,8 +13,9 @@ describe Space do
       # expect(spaces).to include("2 bed flat in London")
       # expect(spaces).to include("Countryside Mansion")
 
-      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
-      Space.create(title: "Countryside Mansion", price: "300", description: "Luxury mansion in countryside")
+      user = User.create(email: "test@example.com", password: "password123")
+      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
+      Space.create(title: "Countryside Mansion", price: "300", description: "Luxury mansion in countryside", user_id: user.id)
 
       spaces = Space.all
 
@@ -29,7 +30,8 @@ describe Space do
 
   describe ".create" do
     it "creates a new space" do
-      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
+      user = User.create(email: "test@example.com", password: "password123")
+      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
       expect(space.price).to eq "100"
@@ -39,7 +41,8 @@ describe Space do
 
   describe "availability" do
     it "is true by default" do
-      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
+      user = User.create(email: "test@example.com", password: "password123")
+      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
       expect(space.price).to eq "100"
@@ -48,7 +51,8 @@ describe Space do
     end
 
     it "booking updates to false" do
-      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London")
+      user = User.create(email: "test@example.com", password: "password123")
+      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
       expect(space.price).to eq "100"
@@ -63,15 +67,15 @@ describe Space do
       expect(updated_space.available?).to eq false
     end
   end
-  #describe "#space_ownership" do
-  #  it "returns a list of spaces owned by the user" do
-  #    user = User.create(email: "test@example.com", password: "password123")
-  #    space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", id: user.id)
-  #    p space
-  #    DatabaseConnection.query("INSERT INTO spaces (id, user_id) VALUES (1, #{user.id})")
-  #    p user
-  #    owned_space = space.user_id.first
-  #    expect(owned_space["user_id"]).to eq user.id
-  #  end
-  #end
+  describe "#space_ownership" do
+    it "returns a list of spaces owned by the user" do
+      user = User.create(email: "test@example.com", password: "password123")
+      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
+      DatabaseConnection.query("INSERT INTO spaces (id, title, price, description, user_id) VALUES (1, 'London Flat', '100', '2 bed flat in London', '#{user.id}')")
+
+      owned_space = space
+      p owned_space
+      expect(owned_space.user_id).to eq user.id
+    end
+  end
 end
