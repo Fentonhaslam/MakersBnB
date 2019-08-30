@@ -87,7 +87,6 @@ describe Space do
 
     it 'calls .find on the Comment class' do
       user = User.create(email: "test@example.com", password: "PASSword123")
-      p user
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(user_class).to receive(:find).with(id: user.id)
 

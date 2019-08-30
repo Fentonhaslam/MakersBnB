@@ -13,6 +13,7 @@ class MakersBnb < Sinatra::Base
   enable :method_override
 
   get "/" do
+    @spaces = Space.all
     erb(:home)
   end
 
@@ -39,7 +40,7 @@ class MakersBnb < Sinatra::Base
     redirect "/user/spaces"
   end
 
-  get "/user/" do
+  get "/user" do
     erb(:log_in)
   end
 
@@ -52,11 +53,6 @@ class MakersBnb < Sinatra::Base
       flash[:notice] = "Please check your email or password."
       redirect("/user/")
     end
-  end
-
-  get "/spaces" do
-    @spaces = Space.all
-    erb(:'spaces/spaces')
   end
 
   get "/user/spaces" do
@@ -82,7 +78,7 @@ class MakersBnb < Sinatra::Base
 
   patch '/spaces/:id' do
     Space.book(id: params[:id])
-    redirect "/spaces"
+    redirect "/user/spaces"
   end
 
   post '/user/destroy' do

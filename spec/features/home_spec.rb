@@ -18,9 +18,12 @@ feature "MakerBnb" do
 
   feature "Spaces" do
     scenario "can create a new spaces" do
-      visit("/spaces")
-      click_button("Add space")
-      expect(page).to have_button("Create space")
+      sign_up
+      add_space('London flat', 100, '2 bed flat in London')
+      expect(page).to have_content 'London flat'
+      expect(page).to have_content 100
+      expect(page).to have_content "2 bed flat in London"
+      expect(page).to have_button("Add space")
     end
   end
 end
