@@ -1,11 +1,30 @@
-<h3> List of spaces </h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="Makersbnb_main_style.css">
+</head>
+<style>
+</style>
 
 <ul>
+  <li><a href="/user/new">Signup</a></li>
+  <li><a href="/user">Login</a></li>
+  <li><a class="active" href="/spaces">Spaces</a></li>
+</ul>
+
+<section class="hero">
+
+</section>
+
+<h3> List of spaces </h3>
+
+<div class="grid-container">
   <% @spaces.each do |space| %>
-  <li class="space" id="space">
+  <div class="grid-item">
+  <p class="space" id="space">
     <%= space.title %>
     <br>
-    <%= space.price %>
+    £<%= space.price %>
     <br>
     <%= space.description %>
     <br>
@@ -23,7 +42,10 @@
   <%end%>
 </ul>
 
-<html>
+
+  </div>
+  <%end%>
+</div>
   <form action='/spaces/new'>
   <input type='submit' name='Add_spaces' value='Add space'>
   </form>
