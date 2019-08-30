@@ -7,7 +7,7 @@ require_relative "./database_connection_setup"
 require "sinatra/flash"
 
 class MakersBnb < Sinatra::Base
-  enable :sessions
+    enable :sessions
   database_connection_setup
   register Sinatra::Flash
   enable :method_override
@@ -70,13 +70,14 @@ class MakersBnb < Sinatra::Base
     erb(:'bookings/new')
   end
 
-  get "/spaces/new" do
-    erb(:'spaces/new_spaces')
+
+  post '/spaces' do
+    Space.create(title: params[:title], price: params[:price], description: params[:description])
+    redirect '/user/spaces'
   end
 
-  post "/spaces" do
-    Space.create(title: params[:title], price: params[:price], description: params[:description], user_id: session[:id])
-    redirect "/spaces"
+  get "/spaces/new" do
+    erb(:'spaces/new_spaces')
   end
 
   patch '/spaces/:id' do
@@ -90,7 +91,10 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
-
+  post '/spaces/delete/:id' do
+    Space.delete(id: params[:id])
+    redirect '/user/spaces'
+  end
 
 
   run! if app_file == $PROGRAM_NAME

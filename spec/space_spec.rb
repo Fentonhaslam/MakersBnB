@@ -1,3 +1,4 @@
+
 # frozen_string_literal: true
 
 require "space"
@@ -36,6 +37,14 @@ describe Space do
       expect(space.title).to eq("London Flat")
       expect(space.price).to eq "100"
       expect(space.description).to eq("2 bed flat in London")
+    end
+  end
+
+  describe '.delete' do
+    it 'deletes a space' do
+      space = Space.create(title: 'London Flat', price: '100', description: '2 bed flat in London')
+      Space.delete(id: space.id)
+      expect(Space.all.length).to eq 0
     end
   end
 
