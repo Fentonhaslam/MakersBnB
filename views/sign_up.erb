@@ -1,11 +1,43 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="Makersbnb_main_style.css">
+  <link rel="stylesheet" href="Makersbnb_main_style.css">
 </head>
-    <form action="/user/new" method = "POST">
-    <input type='text' name='email' placeholder='Email'>
-    <input type='password' name='password' placeholder="Password">
-    <input type='password' name='repeat_password' placeholder="Repeat password">
-    <input type='submit' value='Sign up'>
-    </form>
+
+<style>
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-color: lightblue;
+  margin:50px 0px; padding:0px;
+  text-align:center;
+  border: 10px solid red;
+  align:center;
+  width: 40%;
+}
+</style>
+</head>
+<body>
+
+<h3>Please enter your user details</h3>
+
+<div>
+  <form action="/user/new" method = "POST">
+  <input type='text' name='email' placeholder='Email'>
+  <br>
+  <input type='password' name='password' placeholder="Password">
+  <br>
+  <input type='password' name='repeat_password' placeholder="Repeat password">
+  <br>
+  <input type='submit' value='Sign up'>
+  </form>
+</div>
+
+</body>
 </html>

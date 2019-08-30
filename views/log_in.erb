@@ -1,12 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="Makersbnb_main_style.css">
+  <link rel="stylesheet" href="Makersbnb_main_style.css">
 </head>
-<!-- the flash tag needs a css style to it-->
-<h1><%= flash[:notice]%></h1> 
-    <form action="/user/login" method="post">
+
+<style>
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+</style>
+</head>
+<body>
+<h3>please enter your login details</h3>
+
+<div>
+  <h1><%= flash[:notice]%></h1>
+  <form action="/user/login" method="post">
     <input type='text' name='email' placeholder='Email'>
     <input type='password' name='password' placeholder="Password">
     <input type='submit' value="Log in">
-    </form>
+  </form>
+</div>
+
+</body>
 </html>

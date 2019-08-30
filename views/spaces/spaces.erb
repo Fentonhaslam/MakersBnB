@@ -1,28 +1,26 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="Makersbnb_main_style.css">
-<style>
-body {
-  background-color: lightblue;
-}
-h3 {
-    text-align: center;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    font-family: verdana;
-}
-li {
-  text-align: center;
-  color: rgb(0, 0, 0);
-    text-align: center;
-    font-family: verdana;
-}
-</style>
+  <link rel="stylesheet" href="Makersbnb_main_style.css">
 </head>
-<h3> List of spaces </h3>
+<style>
+</style>
 
 <ul>
+  <li><a href="/user/new">Signup</a></li>
+  <li><a href="/user">Login</a></li>
+  <li><a class="active" href="/spaces">Spaces</a></li>
+</ul>
+
+<section class="hero">
+
+</section>
+
+<h3> List of spaces </h3>
+
+<div class="grid-container">
   <% @spaces.each do |space| %>
+  <div class="grid-item">
   <p class="space" id="space">
     <%= space.title %>
     <br>
@@ -37,9 +35,10 @@ li {
       <% else %>
         Booked
       <% end %>
-  </li>
+
+  </div>
   <%end%>
-</ul>
+</div>
   <form action='/spaces/new'>
   <input type='submit' name='Add_spaces' value='Add space'>
   </form>
