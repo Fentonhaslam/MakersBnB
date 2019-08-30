@@ -7,3 +7,11 @@ def add_space(title, price, description)
   fill_in('description', with: description)
   click_button('Create space')
 end
+
+def sign_up
+      visit '/user/new'
+      fill_in(:email, with: 'test@example.com')
+      fill_in(:password, with: 'PASSword123')
+      fill_in(:repeat_password, with: 'PASSword123')
+      click_button('Sign up')
+end

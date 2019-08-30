@@ -8,8 +8,7 @@ feature 'MakerBnb' do
     end
 
     scenario 'A user can see a list of spaces' do
-      visit('/')
-      click_button('List of spaces')
+      sign_up
       add_space('London flat', 100, '2 bed flat in London')
       add_space('Countryside mansion', 300, 'Luxury mansion in the countryside')
       expect(page).to have_content 'London flat'

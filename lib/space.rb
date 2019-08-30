@@ -46,7 +46,14 @@ class Space
     )
   end
 
+  def self.delete(id:)
+    DatabaseConnection.query("DELETE FROM spaces WHERE id = '#{id}'")
+  end
+
+
   def available?
     @available == 1
   end
+
+  
 end
