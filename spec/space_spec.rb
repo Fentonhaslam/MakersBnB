@@ -67,6 +67,7 @@ describe Space do
       expect(updated_space.available?).to eq false
     end
   end
+
   describe "#space_ownership" do
     it "returns a list of spaces owned by the user" do
       user = User.create(email: "test@example.com", password: "password123")
@@ -74,8 +75,19 @@ describe Space do
       DatabaseConnection.query("INSERT INTO spaces (id, title, price, description, user_id) VALUES (1, 'London Flat', '100', '2 bed flat in London', '#{user.id}')")
 
       owned_space = space
-      p owned_space
       expect(owned_space.user_id).to eq user.id
     end
   end
+
+  describe '#user' do
+    let(:user_class) { double(:user_class) }
+
+    it 'calls .where on the Comment class' do
+      user = User.create(email: "test@example.com", password: "password123")
+      space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
+      expect(user_class).to receive(:find).with(id: user.id)
+
+      space.user(user_class)
+    end
+end
 end

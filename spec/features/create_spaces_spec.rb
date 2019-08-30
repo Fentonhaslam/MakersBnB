@@ -12,4 +12,16 @@ feature "adding a new space" do
     expect(page).to have_content "123"
     expect(page).to have_content "A Brighton Flat by the seaside"
   end
+
+  scenario 'a registered user can add a space and their email is listed' do
+    visit "/user/new"
+    fill_in(:email, with: "test@example.com")
+    fill_in(:password, with: "PASSword123")
+    fill_in(:repeat_password, with: "PASSword123")
+    click_button("Sign up")
+
+    add_space("London flat", 100, "2 bed flat in London")
+
+    expect(page).to have_content 'test@example.com'
+  end
 end

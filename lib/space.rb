@@ -50,10 +50,9 @@ class Space
     )
   end
 
-  #def user(user = User)
-  #
-  #  DatabaseConnection.query("SELECT * FROM spaces WHERE user_id = #{id};")
-  #end
+  def user(user_class = User)
+   user_class.find(id: @user_id)
+  end
 
   def available?
     @available == 1

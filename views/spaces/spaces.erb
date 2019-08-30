@@ -9,13 +9,16 @@
     <br>
     <%= space.description %>
     <br>
-      <% if space.available? %>
-        <form action='booking/<%= space.id %>/new'>
-          <input type='submit' value='Available'>
-        </form>
-      <% else %>
-        Booked
-      <% end %>
+    <%= space.user.email %>
+    <br>
+
+    <% if space.available? %>
+      <form action='booking/<%= space.id %>/new'>
+        <input type='submit' value='Available'>
+      </form>
+    <% else %>
+      Booked
+    <% end %>
   </li>
   <%end%>
 </ul>

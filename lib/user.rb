@@ -28,4 +28,9 @@ class User
     return unless BCrypt::Password.new(result[0]['password']) == password
     User.new(id: result[0]['id'], email: result[0]['email'])
   end
+
+  def self.where(user_id:)
+    result = DatabaseConnection.query("SELECT * FROM users WHERE id = '#{user_id}'")
+    
+  end
 end

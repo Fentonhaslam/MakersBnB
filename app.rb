@@ -54,7 +54,6 @@ class MakersBnb < Sinatra::Base
   end
 
   get "/booking/:id/new" do
-    p params
     @id = params[:id]
     erb(:'bookings/new')
   end
@@ -69,7 +68,6 @@ class MakersBnb < Sinatra::Base
   end
 
   patch "/spaces/:id" do
-    p params
     Space.book(id: params[:id])
     redirect "/spaces"
   end
