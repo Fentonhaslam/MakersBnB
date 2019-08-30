@@ -15,11 +15,3 @@ def sign_up
   fill_in(:repeat_password, with: "PASSword123")
   click_button("Sign up")
 end
-
-def sign_up
-      visit '/user/new'
-      fill_in(:email, with: 'test@example.com')
-      fill_in(:password, with: 'PASSword123')
-      fill_in(:repeat_password, with: 'PASSword123')
-      click_button('Sign up')
-end

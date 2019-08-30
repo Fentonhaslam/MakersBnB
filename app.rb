@@ -72,7 +72,7 @@ class MakersBnb < Sinatra::Base
 
 
   post '/spaces' do
-    Space.create(title: params[:title], price: params[:price], description: params[:description])
+    Space.create(title: params[:title], price: params[:price], description: params[:description], user_id: session[:id])
     redirect '/user/spaces'
   end
 
@@ -91,7 +91,7 @@ class MakersBnb < Sinatra::Base
     redirect '/'
   end
 
-  post '/spaces/delete/:id' do
+  delete '/spaces/delete/:id' do
     Space.delete(id: params[:id])
     redirect '/user/spaces'
   end

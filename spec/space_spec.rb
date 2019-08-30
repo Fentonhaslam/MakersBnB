@@ -7,14 +7,7 @@ require "user"
 describe Space do
   describe ".all" do
     it "returns a list of spaces" do
-      # DatabaseConnection.query("INSERT INTO spaces (title, price, description) VALUES('London Flat', '100', '2 bed flat in London')")
-      # DatabaseConnection.query("INSERT INTO spaces (title, price, description) VALUES('Countryside Mansion', '300', 'Luxury mansion in countryside')")
-      # spaces = Space.all
-
-      # expect(spaces).to include("2 bed flat in London")
-      # expect(spaces).to include("Countryside Mansion")
-
-      user = User.create(email: "test@example.com", password: "password123")
+      user = User.create(email: "test@example.com", password: "PASSword123")
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       Space.create(title: "Countryside Mansion", price: "300", description: "Luxury mansion in countryside", user_id: user.id)
 
@@ -31,7 +24,7 @@ describe Space do
 
   describe ".create" do
     it "creates a new space" do
-      user = User.create(email: "test@example.com", password: "password123")
+      user = User.create(email: "test@example.com", password: "PASSword123")
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
@@ -42,7 +35,8 @@ describe Space do
 
   describe '.delete' do
     it 'deletes a space' do
-      space = Space.create(title: 'London Flat', price: '100', description: '2 bed flat in London')
+      user = User.create(email: "test@example.com", password: "PASSword123")
+      space = Space.create(title: 'London Flat', price: '100', description: '2 bed flat in London', user_id: user.id)
       Space.delete(id: space.id)
       expect(Space.all.length).to eq 0
     end
@@ -50,7 +44,7 @@ describe Space do
 
   describe "availability" do
     it "is true by default" do
-      user = User.create(email: "test@example.com", password: "password123")
+      user = User.create(email: "test@example.com", password: "PASSword123")
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
@@ -60,7 +54,7 @@ describe Space do
     end
 
     it "booking updates to false" do
-      user = User.create(email: "test@example.com", password: "password123")
+      user = User.create(email: "test@example.com", password: "PASSword123")
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(space).to be_a Space
       expect(space.title).to eq("London Flat")
@@ -79,7 +73,7 @@ describe Space do
 
   describe "#space_ownership" do
     it "returns a list of spaces owned by the user" do
-      user = User.create(email: "test@example.com", password: "password123")
+      user = User.create(email: "test@example.com", password: "PASSword123")
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       DatabaseConnection.query("INSERT INTO spaces (id, title, price, description, user_id) VALUES (1, 'London Flat', '100', '2 bed flat in London', '#{user.id}')")
 
@@ -91,8 +85,9 @@ describe Space do
   describe '#user' do
     let(:user_class) { double(:user_class) }
 
-    it 'calls .where on the Comment class' do
-      user = User.create(email: "test@example.com", password: "password123")
+    it 'calls .find on the Comment class' do
+      user = User.create(email: "test@example.com", password: "PASSword123")
+      p user
       space = Space.create(title: "London Flat", price: "100", description: "2 bed flat in London", user_id: user.id)
       expect(user_class).to receive(:find).with(id: user.id)
 
