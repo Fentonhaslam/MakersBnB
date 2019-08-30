@@ -13,7 +13,7 @@ class User
 
   def self.create(email:, password:)
     return 'Email must be a valid format: Please try again' if EmailValidator.invalid?(email)
-
+    return 'Complexity requirement not met. Please use: 1 uppercase, 1 lowercase and 1 digit' unless is_complex?(password)
     email_check = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'")
     return 'Email already exists: Please try again' if email_check.any?
 
@@ -40,8 +40,12 @@ class User
     result.any?
   end
 
-  def self.is_valid_email?(email)
-    email = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  private
+
+  def self.is_complex?(password)
+    password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/
+
+    #'Complexity requirement not met. Please use: 1 uppercase, 1 lowercase and 1 digit'
   end
 
 end
