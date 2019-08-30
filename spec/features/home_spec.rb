@@ -2,12 +2,6 @@
 
 feature "MakerBnb" do
   feature "Homepage" do
-    scenario "Can show button to all spaces" do
-      visit("/")
-      expect(page).to have_button("List of spaces")
-    end
-
-
     scenario 'A user can see a list of spaces' do
       sign_up
       add_space('London flat', 100, '2 bed flat in London')
@@ -21,6 +15,7 @@ feature "MakerBnb" do
       expect(page).to have_button("Add space")
     end
   end
+
   feature "Spaces" do
     scenario "can create a new spaces" do
       visit("/spaces")

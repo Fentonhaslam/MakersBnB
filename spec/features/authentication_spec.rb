@@ -4,10 +4,7 @@ feature 'authentication' do
   feature 'Sign up' do
     scenario 'a user can sign up' do
       visit '/user/new'
-      fill_in(:email, with: 'test@example.com')
-      fill_in(:password, with: 'PASSword123')
-      fill_in(:repeat_password, with: 'PASSword123')
-      click_button('Sign up')
+      sign_up
       expect(page).to have_content 'Welcome, test@example.com'
       expect(:password).to eq(:password)
     end

@@ -21,7 +21,7 @@
 <div class="grid-container">
   <% @spaces.each do |space| %>
   <div class="grid-item">
-  <p class="space" id="space">
+    <p class="space" id="space">
     <%= space.title %>
     <br>
     £<%= space.price %>
@@ -38,13 +38,8 @@
     <% else %>
       Booked
     <% end %>
-  </li>
-  <%end%>
-</ul>
-
-
   </div>
-  <%end%>
+  <% end %>
 </div>
   <form action='/spaces/new'>
   <input type='submit' name='Add_spaces' value='Add space'>
