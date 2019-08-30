@@ -30,6 +30,15 @@ feature 'authentication' do
       click_button('Sign up')
       expect(page).to have_content 'Email already exists: Please try again'
     end
+
+    scenario 'email must be a valid format' do
+      visit '/user/new'
+      fill_in(:email, with: 'testexamplecom')
+      fill_in(:password, with: 'password123')
+      fill_in(:repeat_password, with: 'password123')
+      click_button('Sign up')
+      expect(page).to have_content 'Email must be a valid format: Please try again'
+    end
   end
 
   feature 'log in' do

@@ -19,6 +19,7 @@ class MakersBnb < Sinatra::Base
   get '/user/new' do
     @email = session[:email]
     erb(:sign_up)
+
   end
 
   post '/user/new' do
@@ -26,12 +27,14 @@ class MakersBnb < Sinatra::Base
       flash[:notice] = 'Password does not match: Please try again'
       redirect '/user/new'
     end
-    if User.email?(params[:email])
-      flash[:notice] = 'Email already exists: Please try again'
+
+    user = User.create(email: params[:email], password: params[:password])
+
+    if user.is_a? String
+      flash[:notice] = user
       redirect '/user/new'
     end
-    
-    user = User.create(email: params[:email], password: params[:password])
+
     session[:id] = user.id
     redirect '/user/spaces'
   end
@@ -63,7 +66,6 @@ class MakersBnb < Sinatra::Base
   end
 
   get '/booking/:id/new' do
-    p params
     @id = params[:id]
     erb(:'bookings/new')
   end
@@ -87,6 +89,9 @@ class MakersBnb < Sinatra::Base
     flash[:notice] = 'You have logged out.'
     redirect '/'
   end
+
+
+
 
   run! if app_file == $PROGRAM_NAME
 end

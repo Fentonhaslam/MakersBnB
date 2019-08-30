@@ -29,7 +29,12 @@ describe 'User' do
       expect(user.id).to eq persisted_data.first['id']
       expect(user.email).to eq 'test@mail.com'
 
-      expect(duplicate_user).to eq nil
+      expect(duplicate_user).to eq 'Email already exists: Please try again'
+    end
+
+    it 'checks that the user enters a correct email' do
+      user = User.create(email: 'testmailcom', password: 'test123')
+      expect(user).to eq 'Email must be a valid format: Please try again'
     end
   end
 
