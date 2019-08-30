@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/student/Projects/MakersBnB/spec/database_connection_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/database_connection_spec.rb": [
         null,
         null,
         1,
@@ -32,7 +32,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/features/authentication_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/features/authentication_spec.rb": [
         null,
         null,
         1,
@@ -57,6 +57,15 @@
         null,
         null,
         1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -108,7 +117,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/features/availability_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/features/availability_spec.rb": [
         null,
         null,
         1,
@@ -131,7 +140,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/features/create_spaces_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/features/create_spaces_spec.rb": [
         null,
         null,
         1,
@@ -149,7 +158,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/features/home_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/features/home_spec.rb": [
         null,
         null,
         1,
@@ -182,7 +191,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/space_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/space_spec.rb": [
         null,
         null,
         1,
@@ -249,7 +258,7 @@
         null,
         null
       ],
-      "/Users/student/Projects/MakersBnB/spec/user_spec.rb": [
+      "/Users/student/Desktop/MakersBnB/spec/user_spec.rb": [
         null,
         null,
         1,
@@ -281,6 +290,11 @@
         1,
         1,
         null,
+        1,
+        null,
+        null,
+        1,
+        1,
         1,
         null,
         null,
@@ -307,7 +321,6 @@
         null
       ]
     },
-    "timestamp": 1567090978
+    "timestamp": 1567157650
   }
 }
-

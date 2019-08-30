@@ -1,8 +1,9 @@
 # frozen_string_literal: true
-
 require 'bcrypt'
+require 'email_validator'
 
 class User
+
   attr_reader :id, :email
 
   def initialize(id:, email:)
@@ -11,8 +12,10 @@ class User
   end
 
   def self.create(email:, password:)
+    return 'Email must be a valid format: Please try again' if EmailValidator.invalid?(email)
+
     email_check = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'")
-    return if email_check.any?
+    return 'Email already exists: Please try again' if email_check.any?
 
     encrypted_password = BCrypt::Password.create(password)
 
@@ -36,4 +39,9 @@ class User
     result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}'")
     result.any?
   end
+
+  def self.is_valid_email?(email)
+    email = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+  end
+
 end
