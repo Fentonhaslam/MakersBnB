@@ -44,8 +44,6 @@ class User
 
   def self.is_complex?(password)
     password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])/
-
-    #'Complexity requirement not met. Please use: 1 uppercase, 1 lowercase and 1 digit'
   end
 
 end
