@@ -5,6 +5,8 @@ require_relative "./lib/space"
 require_relative "./lib/user"
 require_relative "./database_connection_setup"
 require "sinatra/flash"
+require 'sinatra/bootstrap'
+
 
 class MakersBnb < Sinatra::Base
     enable :sessions
@@ -28,7 +30,7 @@ class MakersBnb < Sinatra::Base
       flash[:notice] = 'Password does not match: Please try again'
       redirect '/user/new'
     end
-    
+
     user = User.create(email: params[:email], password: params[:password])
 
     if user.is_a? String

@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="Makersbnb_main_style.css">
-</head>
-
 <style>
-input[type=text] {
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-
-}
-
-body {
-  background-color: lightblue;
-  margin:50px 0px; padding:0px;
-  text-align:center;
-  border: 10px solid red;
-  align:center;
-  width: 40%;
-}
+  input[type=button], input[type=submit] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 52px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 </style>
+<head>
+  <title>Space Jam BnB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Space Jam</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/user/new">Signup</a></li>
+          <li><a href="/user">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
 
-<h3>Please enter your user details</h3>
-
-<div>
+<div class="row text-center">
+  <h3>Please enter your user details</h3>
   <%= flash[:notice] %>
   <form action="/user/login" method = "POST">
   <input type='text' name='email' placeholder='Email'>
@@ -40,4 +54,3 @@ body {
 
 </body>
 </html>
-

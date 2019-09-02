@@ -14,6 +14,8 @@ gem 'pg'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-flash'
+gem 'sinatra-bootstrap', :require => 'sinatra/bootstrap'
+
 
 group :test do
   gem 'capybara'

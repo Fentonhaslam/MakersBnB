@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-Welcome to spaces
+<html lang="en">
 <%= flash[:notice] %>
-<html>
 <head>
-  <link rel="stylesheet" href="Makersbnb_main_style.css">
+  <title>Space Jam BnB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-
-
 <body>
-<ul>
-  <li><a href="/user/new">Signup</a></li>
-  <li><a href="/user">Login</a></li>
-  <li><a class="active" href="/spaces">Spaces</a></li>
-</ul>
 
-<body class="class-for-index">
-  <h3> Welcome to SpaceJam</h3>
-  <h4> Bed n Breakfast </h4>
-</body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Space Jam</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/user/new">Signup</a></li>
+        <li><a href="/user">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<h3> List of spaces </h3>
+<div class="jumbotron text-center">
+  <img src="img/examples/skyline.png" width="1200px" height="300px" background-size="contain">
+    <h1>Space Jam BNB</h1>
+    <p>Welcome to Space Jam BnB</p>
+    <p>Rent, or hire spaces around the country</p>
+</div>
 
-<div class="grid-container">
+<div class="row text-center">
   <% @spaces.each do |space| %>
-  <div class="grid-item">
+    <div class="col-sm-4">
+    <img src="img/examples/paris.jpg" width="250px" height="250px">
     <p class="space" id="space">
     <%= space.title %>
     <br>
@@ -33,9 +49,8 @@ Welcome to spaces
     <br>
     <%= space.user.email %>
     <br>
-
     <% if space.available? %>
-      <form action='/booking/<%= space.id %>/new'>
+      <form action='booking/<%= space.id %>/new'>
         <input type='submit' value='Available'>
       </form>
     <% else %>
@@ -44,6 +59,5 @@ Welcome to spaces
   </div>
   <% end %>
 </div>
-
-
+</body>
 </html>
