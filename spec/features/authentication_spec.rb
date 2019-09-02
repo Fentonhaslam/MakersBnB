@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-feature 'authentication' do
-  feature 'Sign up' do
+feature 'authentication:' do
+  feature 'Sign up:' do
     scenario 'a user can sign up' do
       visit '/user/new'
       sign_up
@@ -47,7 +47,7 @@ feature 'authentication' do
     end
   end
 
-  feature 'log in' do
+  feature 'log in:' do
     scenario 'a user can log in' do
       User.create(email: 'test@example.com', password: 'PASSword123')
       visit '/user'
